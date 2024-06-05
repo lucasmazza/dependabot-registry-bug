@@ -1,0 +1,17 @@
+version: 2
+registries:
+  secret-registry:
+    type: rubygems-server
+    url: https://rubygems.org
+    username: USERNAME
+    password: PASSWORD
+
+updates:
+  - package-ecosystem: "bundler"
+    directory: "/"
+    insecure-external-code-execution: "allow"
+    versioning-strategy: "increase-if-necessary"
+    schedule:
+      interval: "daily"
+    registries:
+      - "secret-registry"
